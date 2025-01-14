@@ -178,7 +178,7 @@ terraform apply
 ```
 Type `yes` when prompted.
 
-## Clean Up
+### 6. Clean Up
 To remove all resources created by this project, run:
 ```bash
 terraform destroy
@@ -191,8 +191,7 @@ Type `yes` when prompted.
 - Use the VPC ID and Subnet IDs from the outputs for integrating with other AWS services.
 
 
-## Step 6: After Create ec2 instance infrastructure also install Jenkins
-## 7. Unlock Jenkins  
+## Step 7: After Create ec2 instance infrastructure also install Jenkins and Unlock Jenkins  
 
 After Jenkins is installed, you need to unlock it to complete the setup. The initial admin password is stored in a file on the server. Follow these steps to retrieve it:  
 
