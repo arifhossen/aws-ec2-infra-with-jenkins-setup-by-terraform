@@ -12,7 +12,8 @@ This project provides a Terraform-based solution for creating and managing AWS K
   - [4. Configure Terraform Variables](#4-configure-terraform-variables)
   - [5. Initialize Terraform](#5-initialize-terraform)
   - [6. Apply the Terraform Configuration](#6-apply-the-terraform-configuration)
-  - [7. Unlock Jenkins](#7-unlock-jenkins)
+  - [7. Clean Up](#7-clean-up)
+  - [8. Unlock Jenkins](#8-unlock-jenkins)
  
 - [Modules Description](#modules-description)
 - [Outputs](#outputs)
@@ -168,44 +169,38 @@ availability_zone_1 = "us-east-1a"
 availability_zone_2 = "us-east-1b"
 ```
 
-### 4. Initialize Terraform
+### 5. Initialize Terraform
 Run the following command to initialize the Terraform working directory:
 ```bash
 cd environments/dev
 terraform init
 ```
 
-### 5. Apply the Terraform Configuration
+### 6. Apply the Terraform Configuration
 Apply the configuration to create the AWS resources:
 ```bash
 terraform apply
 ```
 Type `yes` when prompted.
 
-### 6. Clean Up
+### 7. Clean Up
 To remove all resources created by this project, run:
 ```bash
 terraform destroy
 ```
 Type `yes` when prompted.
 
-#### Notes
-- Ensure the EC2 key pair already exists in your AWS account, or let Terraform create it for you.
-- Modify the Security Group rules to restrict access to specific IP addresses for production environments.
-- Use the VPC ID and Subnet IDs from the outputs for integrating with other AWS services.
-
-
-### Step 7: Unlock Jenkins  
+### 8. Unlock Jenkins  
 
 After Jenkins is installed, you need to unlock it to complete the setup. The initial admin password is stored in a file on the server. Follow these steps to retrieve it:  
 
-#### 7.1 Connect to the EC2 Instance  
+#### 8.1 Connect to the EC2 Instance  
 Use SSH to connect to your EC2 instance:  
 ```bash
 ssh -i jenkins-server-KeyPair-dev.pem ubuntu@<instance-public-ip>
 ```  
 
-#### 7.2 Retrieve the Initial Admin Password  
+#### 8.2 Retrieve the Initial Admin Password  
 The initial admin password is stored in the following file:  
 ```
 /var/lib/jenkins/secrets/initialAdminPassword
@@ -216,7 +211,7 @@ Run the following command to view the password:
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```  
 
-#### 7.3  Unlock Jenkins  
+#### 8.3  Unlock Jenkins  
 1. Copy the password displayed in the terminal.  
 2. Open your web browser and navigate to:  
    ```
@@ -224,7 +219,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
    ```  
 3. Paste the password into the "Administrator password" field and click **Continue**.  
 
-#### 7.4 Complete Jenkins Setup  
+#### 8.4 Complete Jenkins Setup  
 1. Install the recommended plugins or select specific ones based on your requirements.  
 2. Create an admin user for Jenkins.  
 3. Finalize the setup and start using Jenkins.  
