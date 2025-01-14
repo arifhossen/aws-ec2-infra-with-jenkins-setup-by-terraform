@@ -34,8 +34,8 @@ This project consists of the following Terraform modules:
 ### 1. Clone the Repository
 Clone the repository to your local machine:
 ```bash
-git clone https://github.com/your-repo/aws-modules-terraform.git
-cd aws-modules-terraform
+git clone https://github.com/arifhossen/aws-ec2-infra-with-jenkins-setup-by-terraform.git
+cd aws-ec2-infra-with-jenkins-setup-by-terraform
 ```
 
 ### 2. Project Structure Below
