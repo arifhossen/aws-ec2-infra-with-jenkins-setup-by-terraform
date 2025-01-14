@@ -1,4 +1,4 @@
-# AWS Keypair, Security Group, VPC, and EC2 Module using Terraform
+# AWS EC2 Infrastructure create and Jenkins Setup using Terraform
 
 This project provides a Terraform-based solution for creating and managing AWS Keypairs, Security Groups, Virtual Private Clouds (VPC), and EC2 instances as reusable modules. The modules are designed to simplify the infrastructure deployment process and can be integrated into larger projects.
 
