@@ -7,9 +7,13 @@ This project provides a Terraform-based solution for creating and managing AWS K
 - [Prerequisites](#prerequisites)
 - [Setup Instructions](#setup-instructions)
   - [1. Clone the Repository](#1-clone-the-repository)
-  - [2. Configure Terraform Variables](#2-configure-terraform-variables)
-  - [3. Initialize Terraform](#3-initialize-terraform)
-  - [4. Apply the Terraform Configuration](#4-apply-the-terraform-configuration)
+  - [2. Project Structure Below](#2-project-structure-below)
+  - [3. Configure Backend Variables](#3-configure-backend)
+  - [4. Configure Terraform Variables](#4-configure-terraform-variables)
+  - [5. Initialize Terraform](#5-initialize-terraform)
+  - [6. Apply the Terraform Configuration](#6-apply-the-terraform-configuration)
+  - [7. Unlock Jenkins](#7-unlock-jenkins)
+ 
 - [Modules Description](#modules-description)
 - [Outputs](#outputs)
 - [Clean Up](#clean-up)
@@ -132,7 +136,7 @@ terraform {
 This description explains the setup of the S3 bucket and DynamoDB table for backend configuration in a clear and concise way for your README file.
 
 
-### 3. Configure Terraform Variables
+### 4. Configure Terraform Variables
 Location environments/dev/terraform.tfvars
 
 Update the `terraform.tfvars` file with your configuration:
@@ -185,13 +189,13 @@ terraform destroy
 ```
 Type `yes` when prompted.
 
-## Notes
+#### Notes
 - Ensure the EC2 key pair already exists in your AWS account, or let Terraform create it for you.
 - Modify the Security Group rules to restrict access to specific IP addresses for production environments.
 - Use the VPC ID and Subnet IDs from the outputs for integrating with other AWS services.
 
 
-## Step 7: After Create ec2 instance infrastructure also install Jenkins and Unlock Jenkins  
+### Step 7: Unlock Jenkins  
 
 After Jenkins is installed, you need to unlock it to complete the setup. The initial admin password is stored in a file on the server. Follow these steps to retrieve it:  
 
